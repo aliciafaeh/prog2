@@ -43,24 +43,51 @@
         <a href="todo.html">Alicias To Do's auf einen Blick</a>
     </div>
 
-
+<!--Abschnitt für einen neuen "Event" hinzuzufügen-->
 <form class="new_entry">
-  <label for="um_was_gehts" class="abstand">Neuer Eintrag:</label>
+  <label for="um_was_gehts" class="abstand">Add an Event:</label>
 
-    <select name="event_todo"; class="abstand">
-        <option value="event">Event</option>
-        <option value="todo">To Do</option>
+    <select name="event_cat"; class="abstand btn-select">
+        <option value="kategorie">Category</option>
+        <option value="arbeiten" class="arbeiten">Work</option>
+        <option value="schule" class="schule">Lectures</option>
+        <option value="spass" class="spass">Leisure-Time</option>
+        <option value="lernen" class="lernen">Study-Time</option>
+        <option value="pruefungen" class="pruefungen">Exams</option>
     </select>
 
-    <input type="text" name="um_was_gehts" id="um_was_gehts" placeholder="What's it about?" class="abstand">
+    <input type="text" name="um_was_gehts" id="um_was_gehts" placeholder="What's it about?" class="abstand form-input">
 
-    <input type="text" name="wo" placeholder="Where?" class="abstand">
+    <input type="text" name="wo" placeholder="Where?" class="abstand form-input" style="width: 140px">
 
-    <input type="date" name="wann_deadline" class="abstand">
+    <input type="date" name="wann_deadline" class="abstand form-input" style="width: 132px">
 
-    <input type="time" name="zeitlich" class="abstand">
+    <input type="time" name="zeitlich" class="abstand form-input" style="width: 80px">
 
-    <input type="submit" value="Add">
+    <input type="submit" value="Add" class="btn-add">
+
+</form>
+
+<!--Abschnitt für einen neues "To Do" hinzuzufügen-->
+
+<form class="new_entry">
+  <label for="was_machen" class="abstand">Add a To Do:</label>
+
+    <select name="event_cat"; class="abstand btn-select-to-do">
+        <option value="kategorie">Category</option>
+        <option value="arbeiten" class="abgabe_studium">Abgabetermin</option>
+        <option value="schule" class="organisiere">Organisieren</option>
+    </select>
+
+    <input type="text" name="was_machen" id="was_machen" placeholder="What To Do?" class="abstand-deadline form-input">
+
+    <label for="bis-wann" class="abstand">Deadline:</label>
+
+    <input type="date" name="wann_deadline" class="abstand form-input" style="width: 132px">
+
+    <input type="time" name="zeitlich" class="abstand form-input" style="width: 80px">
+
+    <input type="submit" value="Add" class="btn-add">
 
 </form>
 

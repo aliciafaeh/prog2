@@ -33,12 +33,107 @@ h1 {
 }
 
 .new_entry {
-    text-align: center;
+    text-align: left;
     padding: 50px 70px;
     text-decoration: none;
-    font-size: 15px;
+    margin-left: 0px;
 }
 
 .abstand {
     margin-right: 22px;
+    font-size: 17px;
+}
+
+.abstand-deadline {
+    margin-right: 96px;
+    font-size: 17px;
+}
+
+/*Für die Event oder To Do Auswahlliste*/ 
+.btn-select {
+    text-decoration: none;
+    padding: 7px;
+    color: black; 
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    width: 150px;
+    border-style: solid;
+    border-color: black;
+}
+
+.arbeiten {
+    background-color: #1B1924;
+    color: white;
+}
+
+.schule {
+    background-color: #B5C1B4;
+    color: white;
+}
+
+.spass {
+    background-color: #DCD9C6;
+}
+
+.lernen {
+    background-color: #74593D;
+    color: white;
+}
+
+.pruefungen {
+    background-color: #3F3232;
+    color: white;
+}
+
+/*Kategorie für To Do wählen*/
+.btn-select-to-do {
+    text-decoration: none;
+    padding: 7px;
+    color: black; 
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    width: 162px;
+    border-style: solid;
+    border-color: black;
+}
+
+/*Eingabefeld Um was gehts und Wo*/
+.form-input {
+    text-decoration: none;
+    padding: 7px;
+    display: inline-block;
+    cursor: pointer;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    width: 180px;
+}
+
+.btn-add {
+    text-decoration: none;
+    padding: 15px;
+    color: white; 
+    background-color: black;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 20px;
+}
+
+.btn-add:hover {
+    text-decoration: none;
+    padding: 15px;
+    color: black; 
+    background-color: white;
+    display: inline-block;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 20px;
 }
