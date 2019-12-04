@@ -42,12 +42,29 @@
         <a href="index.html">Monatsplan</a>
         <a href="todo.html">Alicias To Do's auf einen Blick</a>
     </div>
-    <div class="">
 
-    </div>
 
-<p style="text-align: left; margin-left: 100px; margin-top: 50px;">Neuer Eintrag:</p>
+<form class="new_entry">
+  <label for="um_was_gehts" class="abstand">Neuer Eintrag:</label>
+
+    <select name="event_todo"; class="abstand">
+        <option value="event">Event</option>
+        <option value="todo">To Do</option>
+    </select>
+
+    <input type="text" name="um_was_gehts" id="um_was_gehts" placeholder="What's it about?" class="abstand">
+
+    <input type="text" name="wo" placeholder="Where?" class="abstand">
+
+    <input type="date" name="wann_deadline" class="abstand">
+
+    <input type="time" name="zeitlich" class="abstand">
+
+    <input type="submit" value="Add">
+
+</form>
 
 </body>
 
 </html>
+

@@ -31,3 +31,14 @@ h1 {
 .navbar a:hover {
     text-decoration: underline;
 }
+
+.new_entry {
+    text-align: center;
+    padding: 50px 70px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.abstand {
+    margin-right: 22px;
+}
