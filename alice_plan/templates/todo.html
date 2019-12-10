@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Monatsplan</title>
+    <title>To Do's auf einen Blick</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
@@ -15,7 +15,7 @@
 
     <meta name="author" content="Alicia Faeh" />
 
-    <meta name="subject" content="Persönlicher Monatsplan von Alicia Fäh" />
+    <meta name="subject" content="Alicias To Do's auf einen Blick" />
 
     <meta name="language" content="DE" />
 
@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--Einbinden von Stylesheet-->
-    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="../static/style.css" />
 
     <!--Schrift Online abrufbar, falls nicht auf Computer vorhanden-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -36,29 +36,27 @@
 
 <body>
 
-<h1>MONATSPLAN</h1>
+<h1>TO DO'S AUF EINEN BLICK</h1>
 
     <div class="navbar">
         <a href="index.html">Monatsplan</a>
         <a href="todo.html">To Do's auf einen Blick</a>
     </div>
 
-<!--Abschnitt für einen neuen "Event" hinzuzufügen-->
-<form class="new_entry">
-  <label for="um_was_gehts" class="abstand">Add an Event:</label>
+<!--Abschnitt für einen neues "To Do" hinzuzufügen-->
 
-    <select name="event_cat"; class="abstand btn-select">
+<form class="new_entry">
+  <label for="was_machen" class="abstand">Add a To Do:</label>
+
+    <select name="event_cat"; class="abstand btn-select-to-do">
         <option value="kategorie">Category</option>
-        <option value="arbeiten" class="arbeiten">Work</option>
-        <option value="schule" class="schule">Lectures</option>
-        <option value="spass" class="spass">Leisure-Time</option>
-        <option value="lernen" class="lernen">Study-Time</option>
-        <option value="pruefungen" class="pruefungen">Exams</option>
+        <option value="arbeiten" class="abgabe_studium">Abgabetermin</option>
+        <option value="schule" class="organisiere">Organisieren</option>
     </select>
 
-    <input type="text" name="um_was_gehts" id="um_was_gehts" placeholder="What's it about?" class="abstand form-input">
+    <input type="text" name="was_machen" id="was_machen" placeholder="What To Do?" class="abstand form-input">
 
-    <input type="text" name="wo" placeholder="Where?" class="abstand form-input" style="width: 140px">
+    <label for="bis-wann" class="abstand">Deadline:</label>
 
     <input type="date" name="wann_deadline" class="abstand form-input" style="width: 140px">
 
@@ -68,11 +66,7 @@
 
 </form>
 
-<h2>5. Dezember 2019</h2>
-
-<p>Liste</p>
 
 </body>
 
 </html>
-
