@@ -1,12 +1,3 @@
-thema = input("Welches Thema?")
-ort=input("Where?")
-datum=input("Date?")
-zeit=input("Time?")
-
-daten = {'subject': thema, 'where': ort, 'date': datum, 'time': zeit}
-
-print(daten)
-
 import json
 
 def termin_erfassen(subject, where, date, time):
