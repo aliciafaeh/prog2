@@ -36,7 +36,7 @@
 
 <body>
 
-<h1>MONATSPLAN</h1>
+<h1 class="titel"> MONATSPLAN</h1>
 
     <div class="navbar">
         <a href="{{ url_for('monatsplan') }}">Monatsplan</a>
@@ -44,10 +44,12 @@
     </div>
 
 <!--Abschnitt für einen neuen "Event" hinzuzufügen-->
-<form class="new_entry">
+<div class="container">
+<form class="new_entry" method="POST">
+    <div class=form-group">
   <label for="um_was_gehts" class="abstand">Add an Event:</label>
 
-    <select name="event_cat"; class="abstand btn-select">
+    <select class="abstand btn-select" id="select_category" name="category">
         <option value="kategorie">Category</option>
         <option value="arbeiten" class="arbeiten">Work</option>
         <option value="schule" class="schule">Lectures</option>
@@ -56,17 +58,20 @@
         <option value="pruefungen" class="pruefungen">Exams</option>
     </select>
 
-    <input type="text" name="um_was_gehts" id="um_was_gehts" placeholder="What's it about?" class="abstand form-input">
+    <input type="text" name="subject" id="um_was_gehts" placeholder="What's it about?" class="abstand form-input" required>
 
-    <input type="text" name="wo" placeholder="Where?" class="abstand form-input" style="width: 140px">
+    <input type="text" name="where" id="um_was_gehts" placeholder="Where?" class="abstand form-input" style="width: 140px" required>
 
-    <input type="date" name="wann_deadline" class="abstand form-input" style="width: 140px">
+    <input type="date" name="date" id="um_was_gehts" class="abstand form-input" style="width: 140px" required>
 
-    <input type="time" name="zeitlich" class="abstand form-input" style="width: 80px">
-
+    <input type="time" name="time" id="um_was_gehts" class="abstand form-input" style="width: 80px" required>
     <input type="submit" value="Add" class="btn-add">
+</div>
 
 </form>
+</div>
+
+{% if daten %}
 
 <table style="width:100%">
   <tr>
@@ -76,22 +81,18 @@
     <th>When</th>
     <th>Time</th>
   </tr>
-
+{"% for termin in daten ['termine'].values()%"}
   <tr>
-    <td>Study-Time</td>
-    <td>Fabio Programmieren</td>
-    <td>Zürich Impact Hub</td>
-    <td>10:15 - **</td>
+    {{termin}}
+    <td>{{termin['category']}}</td>
+    <td>{{termin['subject']}}</td>
+    <td>{{termin['where']}}</td>
+    <td>{{termin['time']}}</td>
   </tr>
-
-  <tr>
-    <td>Leisure-Time</td>
-    <td>Alicia's Birthday</td>
-    <td>Bubikon</td>
-    <td>18:00 - 23:00</td>
-  </tr>
-
+  {% else %}
+  {% endif %}
 </table>
+
 
 </body>
 

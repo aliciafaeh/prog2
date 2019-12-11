@@ -1,18 +1,19 @@
 import json
 
-def termin_erfassen(subject, where, date, time):
+def termin_speichern(category, subject, where, date, time):
     
     json_daten = load_json()
     alle_termine = json_daten.get("termine", {})
         
     termin = {
-        "Subject": thema,
-        "Where": ort,
-        "Date": datum,
-        "Time": zeit
+        "category": category,
+        "subjects": subject,
+        "where": where,
+        "date": date,
+        "time": time
     }
         
-    alle_termine[thema] = termin
+    alle_termine[category] = termin
         
     json_daten["termine"] = alle_termine
 
