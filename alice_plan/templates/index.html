@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--Einbinden von Stylesheet-->
-    <link type="text/css" rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <!--Schrift Online abrufbar, falls nicht auf Computer vorhanden-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -68,13 +68,12 @@
 
 </form>
 
-<h2>5. Dezember 2019</h2>
-
 <table style="width:100%">
   <tr>
     <th>Catecory</th>
     <th>Subject</th>
     <th>Where</th>
+    <th>When</th>
     <th>Time</th>
   </tr>
 
