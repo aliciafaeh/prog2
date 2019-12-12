@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Added events</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!--Meta-Tags-->
+
+    <meta charset="utf-8" />
+
+    <meta name="Title" content="Alicia Faeh" />
+
+    <meta name="author" content="Alicia Faeh" />
+
+    <meta name="subject" content="Persönlicher Monatsplan von Alicia Fäh" />
+
+    <meta name="language" content="DE" />
+
+    <meta name="Erstellungsdatum" content="12. November 2019" />
+
+    <meta name="Erstellungsort" content="8608 Bubikon" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--Einbinden von Stylesheet-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!--Schrift Online abrufbar, falls nicht auf Computer vorhanden-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<h1 class="titel">ADDED EVENTS</h1>
+
+    <div class="links">
+        <a href="{{ url_for('startseite') }}">Homepage</a>
+        <a href="{{ url_for('addanevent') }}">Add an Event</a>
+        <a href="{{ url_for('todo') }}">Add a To Do</a>
+        <a href="{{ url_for('monatsplananzeige') }}">Added Events</a>
+<!--Noch todoanzeige-->
+    </div>
+
+
+<div class="container">
+<div class="table-responsive-sm mt-5">
+  {%if daten%}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Where</th>
+                <th scope="col">When</th>
+                <th scope="col">Time</th>
+            </tr>
+            <tbody>
+                {% for termin in daten['termine'].values()%}
+                <tr>
+                  <th scope="row">{{termin['category']}}</th> 
+                  <td>{{termin['subjects']}}</td>  
+                  <td>{{termin['where']}}</td> 
+                  <td>{{termin['date']}}</td>  
+                  <td>{{termin['time']}}</td> 
+
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </thead>
+    </table>
+    {% else %}
+    <h1>Keine Termine erfasst</h1>
+    {% endif %}
+  </div>
+</div>
+
+</body>
+
+</html>
+

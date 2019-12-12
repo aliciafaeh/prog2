@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Add a to do</title>
+    <title>Add an event</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
@@ -15,7 +15,7 @@
 
     <meta name="author" content="Alicia Faeh" />
 
-    <meta name="subject" content="Alicias To Do's auf einen Blick" />
+    <meta name="subject" content="Persönlicher Monatsplan von Alicia Fäh" />
 
     <meta name="language" content="DE" />
 
@@ -27,7 +27,7 @@
 
     <!--Einbinden von Stylesheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    
+
     <!--Schrift Online abrufbar, falls nicht auf Computer vorhanden-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -36,7 +36,8 @@
 
 <body>
 
-<h1 class="titel">ADD A TO DO</h1>
+
+<h1 class="titel">ADD AN EVENT</h1>
 
     <div class="links">
         <a href="{{ url_for('startseite') }}">Homepage</a>
@@ -46,45 +47,46 @@
 <!--Noch todoanzeige-->
     </div>
 <br>
-<h2 style="margin-top: 40px">A lot of stuff to do and so many mental breakdowns to look forward to</h2>
+<h2 style="margin-top: 40px">A lot of places to be at and so little time</h2>
 
 
-
+<!--Abschnitt für einen neuen "Event" hinzuzufügen-->
 <div class="container" style="margin-top: 5px">
 <form class="new_entry" method="POST">
     <div class="form-group">
-  <label for="was_machen" class="abstand">Add a To Do:</label>
+  <label for="um_was_gehts" class="abstand">Add an Event:</label>
 
-    <select name="event_cat"; class="abstand btn-select-to-do">
+    <select class="abstand btn-select" id="select_category" name="category">
         <option value="kategorie">Category</option>
-        <option value="arbeiten" class="abgabe_studium">Abgabetermin</option>
-        <option value="schule" class="organisiere">Organisieren</option>
+        <option value="arbeiten" class="arbeiten">Work</option>
+        <option value="schule" class="schule">Lectures</option>
+        <option value="spass" class="spass">Leisure-Time</option>
+        <option value="lernen" class="lernen">Study-Time</option>
+        <option value="pruefungen" class="pruefungen">Exams</option>
     </select>
 
-    <input type="text" name="was_machen" id="was_machen" placeholder="What To Do?" class="abstand form-input">
+    <input type="text" name="subject" id="um_was_gehts" placeholder="What's it about?" class="abstand form-input" required>
 
-    <label for="bis-wann" class="abstand">Deadline:</label>
+    <input type="text" name="where" id="um_was_gehts" placeholder="Where?" class="abstand form-input" style="width: 140px" required>
 
-    <input type="date" name="wann_deadline" class="abstand form-input" style="width: 140px">
+    <input type="date" name="date" id="um_was_gehts" class="abstand form-input" style="width: 140px" required>
 
-    <input type="time" name="zeitlich" class="abstand form-input" style="width: 80px">
-<br>
+    <input type="time" name="time" id="um_was_gehts" class="abstand form-input" style="width: 80px" required>
     <input type="submit" value="Add" class="btn-add" style="margin-top: 20px">
-
 </div>
+
 </form>
 </div>
 
 <br><br>
 <div>
-    <h3>Click bellow to find all your added to do's:</h3>
+    <h3>Click bellow to find all your added events:</h3>
     <div class="links">
-<a href="{{ url_for('monatsplananzeige') }}">To Do</a>
+<a href="{{ url_for('monatsplananzeige') }}">Agenda</a>
 </div>
 </div>
-
-
 
 </body>
 
 </html>
+
