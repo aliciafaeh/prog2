@@ -46,7 +46,7 @@
 <!--Abschnitt für einen neuen "Event" hinzuzufügen-->
 <div class="container">
 <form class="new_entry" method="POST">
-    <div class=form-group">
+    <div class="form-group">
   <label for="um_was_gehts" class="abstand">Add an Event:</label>
 
     <select class="abstand btn-select" id="select_category" name="category">
@@ -71,28 +71,40 @@
 </form>
 </div>
 
-{% if daten %}
 
-<table style="width:100%">
-  <tr>
-    <th>Catecory</th>
-    <th>Subject</th>
-    <th>Where</th>
-    <th>When</th>
-    <th>Time</th>
-  </tr>
-{"% for termin in daten ['termine'].values()%"}
-  <tr>
-    {{termin}}
-    <td>{{termin['category']}}</td>
-    <td>{{termin['subject']}}</td>
-    <td>{{termin['where']}}</td>
-    <td>{{termin['time']}}</td>
-  </tr>
-  {% else %}
-  {% endif %}
-</table>
+<div class="container">
+<div class="table-responsive-sm mt-5">
+  {%if daten%}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Where</th>
+                <th scope="col">When</th>
+                <th scope="col">Time</th>
+            </tr>
+            <tbody>
+                {% for termin in daten['termine'].values()%}
+                <tr>
+                  {{termin}}
+                  <th scope="row">{{termin['category']}}</th> 
+                  <td>{{termin['subjects']}}</td>  
+                  <td>{{termin['where']}}</td> 
+                  <td>{{termin['date']}}</td>  
+                  <td>{{termin['time']}}</td> 
 
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </thead>
+    </table>
+    {% else %}
+    <h1>Keine Termine erfasst</h1>
+    {% endif %}
+  </div>
+</div>
 
 </body>
 
