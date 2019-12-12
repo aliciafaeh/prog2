@@ -197,3 +197,7 @@ th:after {
     color: black;
     background-color: white;
 }
+
+.einsichttermin {
+    margin: 50px;
+}

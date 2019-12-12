@@ -35,7 +35,7 @@ def todoerfassen():
         was_machen = request.form['was_machen']
         wann_deadline = request.form['wann_deadline']
         zeitlich = request.form['zeitlich']
-        returned_data = speichern_todo.todo_speichern(category, subject, where, date, time)
+        returned_data = speichern_todo.todo_speichern(category, was_machen, wann_deadline, zeitlich)
     return render_template("todoerfassen.html")
 
 
