@@ -20,7 +20,7 @@ def monatsplan():
     return render_template("index.html")
 
 
-@app.route("/monatsplan")
+@app.route("/monatsplans")
 def monatsplan_uebersicht():
     termin_daten = speichern_termine.load_json()
     return render_template("index.html", daten=termin_daten)
