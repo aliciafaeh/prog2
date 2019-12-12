@@ -41,9 +41,9 @@
     <div class="links">
         <a href="{{ url_for('startseite') }}">Homepage</a>
         <a href="{{ url_for('addanevent') }}">Add an Event</a>
-        <a href="{{ url_for('todo') }}">Add a To Do</a>
         <a href="{{ url_for('monatsplananzeige') }}">Added Events</a>
-<!--Noch todoanzeige-->
+        <a href="{{ url_for('todoerfassen') }}">Add a To Do</a>
+        <a href="{{ url_for('todosanzeige') }}">Added To Do's</a>
     </div>
 <br>
 <h2 style="margin-top: 40px">A lot of stuff to do and so many mental breakdowns to look forward to</h2>
@@ -79,7 +79,7 @@
 <div>
     <h3>Click bellow to find all your added to do's:</h3>
     <div class="links">
-<a href="{{ url_for('monatsplananzeige') }}">To Do</a>
+<a href="{{ url_for('todosanzeige') }}">To Do</a>
 </div>
 </div>
 
