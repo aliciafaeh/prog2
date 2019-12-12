@@ -7,8 +7,8 @@ app = Flask(__name__)
 def startseite():
 	return render_template('index.html')
 
-@app.route("/monatsplan", methods=['GET', 'POST'])
-def monatsplan():
+@app.route("/addanevent", methods=['GET', 'POST'])
+def addanevent():
     if request.method == 'POST':
         print(request.form)
         category = request.form['category']
@@ -17,13 +17,13 @@ def monatsplan():
         date = request.form['date']
         time = request.form['time']
         returned_data = speichern_termine.termin_speichern(category, subject, where, date, time)
-    return render_template("index.html")
+    return render_template("eventerfassen.html")
 
 
-@app.route("/monatsplans")
-def monatsplan_uebersicht():
+@app.route("/monatsplananzeige")
+def monatsplananzeige():
     termin_daten = speichern_termine.load_json()
-    return render_template("index.html", daten=termin_daten)
+    return render_template("monatsplan.html", daten=termin_daten)
 
 
 @app.route("/todo")
@@ -32,3 +32,4 @@ def todo():
     
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+
