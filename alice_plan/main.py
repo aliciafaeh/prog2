@@ -26,9 +26,23 @@ def monatsplananzeige():
     return render_template("monatsplan.html", daten=termin_daten)
 
 
-@app.route("/todo")
+@app.route("/todo", methods=['GET', 'POST'])
 def todo():
+    if request.method == 'POST':
+        print(request.form)
+        category = request.form['category']
+        was_machen = request.form['was_machen']
+        wann_deadline = request.form['wann_deadline']
+        zeitlich = request.form['zeitlich']
+        returned_data = speichern_todo.todo_speichern(category, subject, where, date, time)
     return render_template("todo.html")
+
+
+@app.route("/todos")
+def todos():
+    todo_daten = speichern_todos.load_json()
+    return render_template("todos.html", daten=todo_daten)
+
     
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
