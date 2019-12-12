@@ -29,6 +29,11 @@ body {
     background-color: white;
 }
 
+.active {
+  background-color: #C0C0C0;
+  color: white;
+}
+
 .titel {
     font-family: "Montserrat", "Arial", sans-serif;
     font-weight: 400;

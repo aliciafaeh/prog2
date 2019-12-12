@@ -41,27 +41,26 @@
     <div class="links">
         <a href="{{ url_for('startseite') }}">Homepage</a>
         <a href="{{ url_for('addanevent') }}">Add an Event</a>
-        <a href="{{ url_for('monatsplananzeige') }}">Added Events</a>
+        <a href="{{ url_for('monatsplananzeige') }}" class="active">Added Events</a>
         <a href="{{ url_for('todoerfassen') }}">Add a To Do</a>
         <a href="{{ url_for('todosanzeige') }}">Added To Do's</a>
     </div>
     
-<div class="container">
-<div class="table-responsive-sm mt-5">
+
   {%if daten%}
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Category</th>
-                <th scope="col">Subject</th>
-                <th scope="col">Where</th>
-                <th scope="col">When</th>
-                <th scope="col">Time</th>
+                <th>Category</th>
+                <th>Subject</th>
+                <th>Where</th>
+                <th>When</th>
+                <th>Time</th>
             </tr>
             <tbody>
                 {% for termin in daten['termine'].values()%}
                 <tr>
-                  <th scope="row">{{termin['category']}}</th> 
+                  <td>{{termin['category']}}</td> 
                   <td>{{termin['subjects']}}</td>  
                   <td>{{termin['where']}}</td> 
                   <td>{{termin['date']}}</td>  
@@ -76,8 +75,7 @@
     {% else %}
     <h1>Keine Termine erfasst</h1>
     {% endif %}
-  </div>
-</div>
+
 
 </body>
 

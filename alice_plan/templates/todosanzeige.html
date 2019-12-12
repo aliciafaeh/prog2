@@ -43,7 +43,7 @@
         <a href="{{ url_for('addanevent') }}">Add an Event</a>
         <a href="{{ url_for('monatsplananzeige') }}">Added Events</a>
         <a href="{{ url_for('todoerfassen') }}">Add a To Do</a>
-        <a href="{{ url_for('todosanzeige') }}">Added To Do's</a>
+        <a href="{{ url_for('todosanzeige') }}" class="active">Added To Do's</a>
     </div>
 
 
@@ -61,7 +61,7 @@
             <tbody>
                 {% for todo in daten['todos'].values()%}
                 <tr>
-                  <th scope="row">{{todo['category']}}</th> 
+                  <td>{{todo['category']}}</td> 
                   <td>{{todo['was_machen']}}</td>  
                   <td>{{todo['wann_deadline']}}</td> 
                   <td>{{todo['zeitlich']}}</td>  
