@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request, url_for
-from libs import speichern_termine
-from libs import speichern_todo
+from libs import speichern_termine, speichern_todo
 
 app = Flask(__name__)
 

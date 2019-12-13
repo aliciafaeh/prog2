@@ -56,6 +56,7 @@
                 <th>What to do</th>
                 <th>Date</th>
                 <th>Deadline</th>
+                <th>Done?</th>
             </tr>
 
                 {% for todo in daten['todos'].values()%}
@@ -63,7 +64,8 @@
                   <td>{{todo['category']}}</td> 
                   <td>{{todo['was_machen']}}</td>  
                   <td>{{todo['wann_deadline']}}</td> 
-                  <td>{{todo['zeitlich']}}</td>  
+                  <td>{{todo['zeitlich']}}</td> 
+                  <td><input type="checkbox" name="done" />&nbsp;</td>
                 </tr>
                 {% endfor %}
 
@@ -72,6 +74,9 @@
     <h1>Keine Termine erfasst</h1>
     {% endif %}
 
+<h3>Already Done!</h3>
+
+<!--wenn Box Checked isch wär nice würs da uneahzeigt-->
 
 </body>
 
