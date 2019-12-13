@@ -31,7 +31,6 @@ body {
 
 .active {
   background-color: #C0C0C0;
-  color: white;
 }
 
 .titel {
@@ -182,7 +181,6 @@ table {
 
 th {
     text-align: left;
-    padding-bottom: 10px
     margin: 20px;
     width: 20%;
 }
