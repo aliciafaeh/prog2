@@ -146,6 +146,35 @@ body {
     border-style: solid;
 }
 
+.btn {
+    text-decoration: none;
+    padding: 8px;
+    color: white; 
+    background-color: black;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 150px;
+    font-size: 12px;
+    border-color: black;
+    border-style: solid;
+}
+
+.btn:hover {
+    color: black; 
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+}
+
+.btn.active {
+    color: black; 
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+}
+
 table { 
     padding: 50px 70px;
     margin-left: 15px;
@@ -206,3 +235,4 @@ th:after {
 .einsichttermin {
     margin: 50px;
 }
+

@@ -45,11 +45,20 @@
         <a href="{{ url_for('todoerfassen') }}">Add a To Do</a>
         <a href="{{ url_for('todosanzeige') }}">Added To Do's</a>
     </div>
-    
+
+<div id="myBtnContainer" style="margin-top: 40px">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('work')"> Work</button>
+  <button class="btn" onclick="filterSelection('lectures')"> Lectures</button>
+  <button class="btn" onclick="filterSelection('leisure-time')"> Leisure-Time</button>
+  <button class="btn" onclick="filterSelection('study-time')"> Study-Time</button>
+    <button class="btn" onclick="filterSelection('exams')">Exams</button>
+</div>    
+
 
   {%if daten%}
     <table class="table">
-        <thead>
+  <col width="230">
             <tr>
                 <th>Category</th>
                 <th>Subject</th>
@@ -57,7 +66,7 @@
                 <th>When</th>
                 <th>Time</th>
             </tr>
-            <tbody>
+            
                 {% for termin in daten['termine'].values()%}
                 <tr>
                   <td>{{termin['category']}}</td> 
@@ -68,9 +77,7 @@
 
                 </tr>
                 {% endfor %}
-            </tbody>
-
-        </thead>
+            
     </table>
     {% else %}
     <h1>Keine Termine erfasst</h1>

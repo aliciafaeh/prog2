@@ -47,18 +47,17 @@
     </div>
 
 
-<div class="container">
-<div class="table-responsive-sm mt-5">
+
   {%if daten%}
     <table class="table">
-        <thead>
+        <col width="230">
             <tr>
-                <th scope="col">Category</th>
-                <th scope="col">Was machen</th>
-                <th scope="col">Wann Deadline</th>
-                <th scope="col">Zeitlich</th>
+                <th>Category</th>
+                <th>What to do</th>
+                <th>Date</th>
+                <th>Deadline</th>
             </tr>
-            <tbody>
+
                 {% for todo in daten['todos'].values()%}
                 <tr>
                   <td>{{todo['category']}}</td> 
@@ -67,15 +66,12 @@
                   <td>{{todo['zeitlich']}}</td>  
                 </tr>
                 {% endfor %}
-            </tbody>
 
-        </thead>
     </table>
     {% else %}
     <h1>Keine Termine erfasst</h1>
     {% endif %}
-  </div>
-</div>
+
 
 </body>
 
