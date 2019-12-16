@@ -1,18 +1,17 @@
 import json
 
-def todo_speichern(category, was_machen, wann_deadline, zeitlich):
+def todo_speichern(was_machen, wann_deadline, zeitlich):
     
     json_daten = load_json()
     alle_todos = json_daten.get("todos", {})
         
     todo = {
-        "category": category,
         "was_machen": was_machen,
         "wann_deadline": wann_deadline,
         "zeitlich": zeitlich,
     }
         
-    alle_todos[category] = todo
+    alle_todos[was_machen] = todo
         
     json_daten["todos"] = alle_todos
 

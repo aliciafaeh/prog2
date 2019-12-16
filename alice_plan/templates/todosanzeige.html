@@ -52,16 +52,14 @@
     <table class="table">
         <col width="230">
             <tr>
-                <th>Category</th>
                 <th>What to do</th>
-                <th>Date</th>
                 <th>Deadline</th>
+                <th>Time</th>
                 <th>Done?</th>
             </tr>
 
                 {% for todo in daten['todos'].values()%}
                 <tr>
-                  <td>{{todo['category']}}</td> 
                   <td>{{todo['was_machen']}}</td>  
                   <td>{{todo['wann_deadline']}}</td> 
                   <td>{{todo['zeitlich']}}</td> 

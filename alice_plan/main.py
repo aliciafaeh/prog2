@@ -35,11 +35,10 @@ def monatsplananzeige(categoryfilter=None):
 def todoerfassen():
     if request.method == 'POST':
         print(request.form)
-        category = request.form['category']
         was_machen = request.form['was_machen']
         wann_deadline = request.form['wann_deadline']
         zeitlich = request.form['zeitlich']
-        returned_data = speichern_todo.todo_speichern(category, was_machen, wann_deadline, zeitlich)
+        returned_data = speichern_todo.todo_speichern(was_machen, wann_deadline, zeitlich)
     return render_template("todoerfassen.html")
 
 
