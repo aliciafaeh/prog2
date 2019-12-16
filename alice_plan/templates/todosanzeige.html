@@ -47,7 +47,7 @@
     </div>
 
 
-<h3 style="margin-top: 40px;">Amount of To Do's: {{ daten['todos']['open']|length }}</h3>
+<h3 style="margin-top: 40px;">Amount of To Do's: <span class="berechnung">{{ daten['todos']['open']|length }} *</span></h3>
   {%if daten['todos']['open'].items()%}
     <table class="table">
         <col width="230">
@@ -72,7 +72,7 @@
     <h1>Keine offenen Todos</h1>
     {% endif %}
 
-<h3 style="margin-bottom: 0;">To Do's already done: {{ daten['todos']['done']|length }}</h3>
+<h3 style="margin-bottom: 0;">To Do's already done: <span class="berechnung">{{ daten['todos']['done']|length }} *</span></h3>
 {%if daten['todos']['done'].items()%}
 <table class="table">
         <col width="230">
@@ -94,8 +94,7 @@
     <h1>Keine abgeschlossenen Todos</h1>
     {% endif %}
 
-<!--wenn Box Checked isch wär nice würs da uneahzeigt-->
-
+<h1 class="berechnung">*Dieser Wert ist berechnet! (Crazyyy I know!)</h1>
 </body>
 
 </html>

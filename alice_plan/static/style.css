@@ -234,3 +234,11 @@ th:after {
 .einsichttermin {
     margin: 50px;
 }
+
+.berechnung {
+    color: white;
+    background-color: red;
+    border: solid;
+    padding: 10px;
+    font-size: 25px;
+}

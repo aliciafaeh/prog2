@@ -33,7 +33,7 @@ def load_json():
     return json_daten
 
 def save_to_json(daten):
-    with open('data/data.json', "w") as open_file:
+    with open('data/data.json', "w", encoding="utf-8") as open_file:
         json.dump(daten, open_file)
 
 
