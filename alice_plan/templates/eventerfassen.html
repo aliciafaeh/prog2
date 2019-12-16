@@ -13,45 +13,43 @@
         <a href="{{ url_for('todoerfassen') }}">Add a To Do</a>
         <a href="{{ url_for('todosanzeige') }}">Added To Do's</a>
     </div>
-<br>
+            <br>
 <h2>A lot of places to be at and so little time</h2>
 
-
 <!--Abschnitt für einen neuen "Event" hinzuzufügen-->
-<div class="container">
-<form class="new_entry" method="POST">
-    <div class="form-group">
-  <label for="um_was_gehts" class="abstand">Add an Event:</label>
+<div>
+    <form class="new_entry" method="POST">
+        <div>
+            <label for="um_was_gehts" class="abstand">Add an Event:</label>
+                <select class="abstand btn-select" id="select_category" name="category">
+                    <option value="kategorie">Category</option>
+                    <option value="Work" class="work">Work</option>
+                    <option value="Lectures" class="lectures">Lectures</option>
+                    <option value="LeisureTime" class="leisuretime">Leisure-Time</option>
+                    <option value="StudyTime" class="studytime">Study-Time</option>
+                    <option value="Exams" class="exams">Exams</option>
+                </select>
 
-    <select class="abstand btn-select" id="select_category" name="category">
-        <option value="kategorie">Category</option>
-        <option value="Work" class="work">Work</option>
-        <option value="Lectures" class="lectures">Lectures</option>
-        <option value="LeisureTime" class="leisuretime">Leisure-Time</option>
-        <option value="StudyTime" class="studytime">Study-Time</option>
-        <option value="Exams" class="exams">Exams</option>
-    </select>
+                <input type="text" name="subject" id="um_was_gehts" placeholder="What's it about?" class="abstand form-input hundertachzig" required>
 
-    <input type="text" name="subject" id="um_was_gehts" placeholder="What's it about?" class="abstand form-input" required>
+                <input type="text" name="where" id="um_was_gehts" placeholder="Where?" class="abstand form-input hundertachzig" required>
 
-    <input type="text" name="where" id="um_was_gehts" placeholder="Where?" class="abstand form-input" style="width: 140px" required>
+                <input type="date" name="date" id="um_was_gehts" class="abstand form-input datum" required>
 
-    <input type="date" name="date" id="um_was_gehts" class="abstand form-input" style="width: 140px" required>
-
-    <input type="time" name="time" id="um_was_gehts" class="abstand form-input" style="width: 80px" required>
-    
-    <input type="submit" value="Add" class="btn-add" style="margin-top: 20px">
+                <input type="time" name="time" id="um_was_gehts" class="abstand form-input zeit" required>
+                
+                <input type="submit" value="Add" class="btn-add vierzig">
+        </div>
+    </form>
 </div>
 
-</form>
-</div>
+            <br><br>
 
-<br><br>
 <div>
     <h3>Click bellow to find all your added events:</h3>
-    <div class="links">
-<a href="{{ url_for('monatsplananzeige') }}">Agenda</a>
-</div>
+        <div class="links">
+            <a href="{{ url_for('monatsplananzeige') }}">Agenda</a>
+        </div>
 </div>
 
 </body>

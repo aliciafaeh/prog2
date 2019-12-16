@@ -15,35 +15,30 @@
 <br>
 <h2>A lot of stuff to do and so many mental breakdowns to look forward to</h2>
 
+<div>
+    <form class="new_entry" method="POST">
+        <div>
+          <label for="was_machen" class="abstand">Add a To Do:</label>
 
+            <input type="text" name="was_machen" id="was_machen" placeholder="What To Do?" class="abstand form-input hundertachzig">
 
-<div class="container" style="margin-top: 5px">
-<form class="new_entry" method="POST">
-    <div class="form-group">
-  <label for="was_machen" class="abstand">Add a To Do:</label>
+            <label for="bis-wann" class="abstand">Deadline:</label>
 
-    <input type="text" name="was_machen" id="was_machen" placeholder="What To Do?" class="abstand form-input">
+            <input type="date" name="wann_deadline" class="abstand form-input hundertachzig">
 
-    <label for="bis-wann" class="abstand">Deadline:</label>
-
-    <input type="date" name="wann_deadline" class="abstand form-input" style="width: 150px">
-
-    <input type="time" name="zeitlich" class="abstand form-input" style="width: 85px">
-
-    <!--<input type="number" name="duration" class="abstand form-input" placeholder="RQD Time" required style="width: 115px">-->
-<br>
-    <input type="submit" value="Add" class="btn-add" style="margin-top: 20px">
-
-</div>
-</form>
+            <input type="time" name="zeitlich" class="abstand form-input hundertachzig">
+                <br>
+            <input type="submit" value="Add" class="btn-add vierzig">
+        </div>
+    </form>
 </div>
 
 <br><br>
 <div>
     <h3>Click bellow to find all your added to do's:</h3>
-    <div class="links">
-<a href="{{ url_for('todosanzeige') }}">To Do</a>
-</div>
+        <div class="links">
+            <a href="{{ url_for('todosanzeige') }}">To Do</a>
+        </div>
 </div>
 
 

@@ -24,6 +24,30 @@ h2 {
     margin-top: 40px;
 }
 
+table { 
+    padding: 40px 70px;
+    margin-left: 15px;
+}
+
+th {
+    text-align: left;
+    margin: 20px;
+    width: 20%;
+}
+
+td {
+    text-align: left;
+    padding-top: 20px;
+}
+
+th:after {
+    content: ""; 
+    display: block; 
+    width: 80%; 
+    padding-top: 10px; 
+    border-bottom: 0.5px solid black; 
+}
+
 .navbar {
     margin-top: 100px;
 }
@@ -55,12 +79,38 @@ h2 {
     text-align: center;
     padding: 50px 70px;
     text-decoration: none;
-    margin-left: 0px;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    margin: 50px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    font-weight: 400;
 }
 
 .abstand {
     margin-right: 22px;
     font-size: 17px;
+}
+
+.hundertachzig {
+    width: 180px;
+    line-height: 1.6em;
+}
+
+.vierzig {
+    margin-top: 40px
+}
+
+.datum {
+    width: 150px;
+}
+.zeit {
+    width: 80px;
 }
 
 .abstand-deadline {
@@ -69,7 +119,7 @@ h2 {
 }
 
 
-/*Für die Event oder To Do Auswahlliste*/ 
+/*Für die Event Auswahlliste*/ 
 .btn-select {
     text-decoration: none;
     padding: 7px;
@@ -128,7 +178,6 @@ h2 {
     border-color: black;
     border-width: 1px;
     border-style: solid;
-    width: 180px;
 }
 
 .btn-add {
@@ -182,42 +231,6 @@ h2 {
     border-color: black;
     border-style: solid;
 }
-
-table { 
-    padding: 40px 70px;
-    margin-left: 15px;
-}
-
-th {
-    text-align: left;
-    margin: 20px;
-    width: 20%;
-}
-
-td {
-    text-align: left;
-    padding-top: 20px;
-}
-
-th:after {
-    content: ""; 
-    display: block; 
-    width: 80%; 
-    padding-top: 10px; 
-    border-bottom: 0.5px solid black; 
-}
-
-.links a {
-    text-decoration: none;
-    color: black;
-    margin: 50px;
-}
-
-.links a:hover {
-    text-decoration: underline;
-    font-weight: 400;
-}
-
 
 .menu a {
     color: white;
