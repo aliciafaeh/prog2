@@ -66,18 +66,17 @@
                 <th>When</th>
                 <th>Time</th>
             </tr>
-            
-                {% for termin in daten['termine'].values()%}
-                <tr>
-                  <td>{{termin['category']}}</td> 
-                  <td>{{termin['subjects']}}</td>  
-                  <td>{{termin['where']}}</td> 
-                  <td>{{termin['date']}}</td>  
-                  <td>{{termin['time']}}</td> 
-
-                </tr>
+              {% for category in daten['termine'].values()%}
+                  {% for termin in category.values() %}
+                  <tr>
+                    <td>{{termin['category']}}</td> 
+                    <td>{{termin['subjects']}}</td>  
+                    <td>{{termin['where']}}</td> 
+                    <td>{{termin['date']}}</td>  
+                    <td>{{termin['time']}}</td> 
+                  </tr>
+                  {% endfor %}
                 {% endfor %}
-            
     </table>
     {% else %}
     <h1>Keine Termine erfasst</h1>
