@@ -21,9 +21,14 @@ def addanevent():
 
 
 @app.route("/monatsplananzeige")
-def monatsplananzeige():
+@app.route("/monatsplananzeige/<categoryfilter>")
+def monatsplananzeige(categoryfilter=None):
     termin_daten = speichern_termine.load_json()
-    return render_template("monatsplan.html", daten=termin_daten)
+
+    if categoryfilter:
+        return render_template("monatsplan.html", daten=termin_daten['termine'][categoryfilter], categoryfilter=categoryfilter)
+    else:
+        return render_template("monatsplan.html", daten=termin_daten)
 
 
 @app.route("/todoerfassen", methods=['GET', 'POST'])

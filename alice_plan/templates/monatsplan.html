@@ -47,12 +47,12 @@
     </div>
 
 <div id="myBtnContainer" style="margin-top: 40px">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('work')"> Work</button>
-  <button class="btn" onclick="filterSelection('lectures')"> Lectures</button>
-  <button class="btn" onclick="filterSelection('leisure-time')"> Leisure-Time</button>
-  <button class="btn" onclick="filterSelection('study-time')"> Study-Time</button>
-    <button class="btn" onclick="filterSelection('exams')">Exams</button>
+  <a href="{{ url_for('monatsplananzeige') }}" class="btn {% if not categoryfilter %} active {% endif %}"> Show all</a>
+  <a href="{{ url_for('monatsplananzeige', categoryfilter='Work') }}" class="btn {% if categoryfilter=='Work' %} active {% endif %}"> Work</a>
+  <a href="{{ url_for('monatsplananzeige', categoryfilter='Lectures') }}" class="btn {% if categoryfilter=='Lectures' %} active {% endif %}" > Lectures</a>
+  <a href="{{ url_for('monatsplananzeige', categoryfilter='LeisureTime') }}" class="btn  {% if categoryfilter=='LeisureTime' %} active {% endif %}"> Leisure-Time</a>
+  <a href="{{ url_for('monatsplananzeige', categoryfilter='StudyTime') }}" class="btn  {% if categoryfilter=='StudyTime' %} active {% endif %}"> Study-Time</a>
+  <a href="{{ url_for('monatsplananzeige', categoryfilter='Exams') }}" class="btn  {% if categoryfilter=='Exams' %} active {% endif %}">Exams</a>
 </div>    
 
 
@@ -66,6 +66,18 @@
                 <th>When</th>
                 <th>Time</th>
             </tr>
+
+            {% if categoryfilter %}
+                  {% for termin in daten.values() %}
+                  <tr>
+                    <td>{{termin['category']}}</td> 
+                    <td>{{termin['subjects']}}</td>  
+                    <td>{{termin['where']}}</td> 
+                    <td>{{termin['date']}}</td>  
+                    <td>{{termin['time']}}</td> 
+                  </tr>
+                  {% endfor %}
+            {% else %}
               {% for category in daten['termine'].values()%}
                   {% for termin in category.values() %}
                   <tr>
@@ -77,9 +89,10 @@
                   </tr>
                   {% endfor %}
                 {% endfor %}
+            {% endif %}
     </table>
     {% else %}
-    <h1>Keine Termine erfasst</h1>
+    <h1 style="margin-top: 40px;">Keine Termine erfasst</h1>
     {% endif %}
 
 
