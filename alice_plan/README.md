@@ -1,5 +1,5 @@
 Projektidee Alicia Fäh
---> Lernufwandrechner für das Studium
+--> Auflistung aller Events und To Do's aus meinem Leben 
 
 Ausgangslage:
 
