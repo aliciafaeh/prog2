@@ -74,26 +74,26 @@ body {
     border-color: black;
 }
 
-.arbeiten {
+.work {
     background-color: #1B1924;
     color: white;
 }
 
-.schule {
+.lectures {
     background-color: #B5C1B4;
     color: white;
 }
 
-.spass {
+.leisuretime {
     background-color: #DCD9C6;
 }
 
-.lernen {
+.studytime {
     background-color: #74593D;
     color: white;
 }
 
-.pruefungen {
+.exams {
     background-color: #3F3232;
     color: white;
 }
@@ -233,4 +233,3 @@ th:after {
 .einsichttermin {
     margin: 50px;
 }
-

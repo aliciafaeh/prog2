@@ -81,11 +81,18 @@
               {% for category in daten['termine'].values()%}
                   {% for termin in category.values() %}
                   <tr>
-                    <td>{{termin['category']}}</td> 
+                    <td><span class="
+                      {% if termin['category']=='Work' %} work
+                      {% elif termin['category']=='Lectures' %} lectures
+                      {% elif termin['category']=='LeisureTime' %} leisuretime
+                      {% elif termin['category']=='StudyTime' %} studytime
+                      {% elif termin['category']=='Exams' %} exams
+                      {% endif %}
+                    ">{{termin['category']}}</span></td> 
                     <td>{{termin['subjects']}}</td>  
                     <td>{{termin['where']}}</td> 
                     <td>{{termin['date']}}</td>  
-                    <td>{{termin['time']}}</td> 
+                    <td>{{termin['time']}}</td>
                   </tr>
                   {% endfor %}
                 {% endfor %}
