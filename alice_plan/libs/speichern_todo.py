@@ -8,10 +8,10 @@ def todo_speichern(was_machen, wann_deadline, zeitlich):
     todo = {
         "was_machen": was_machen,
         "wann_deadline": wann_deadline,
-        "zeitlich": zeitlich,
+        "zeitlich": zeitlich
     }
         
-    alle_todos[was_machen] = todo
+    alle_todos['open'][was_machen] = todo
         
     json_daten["todos"] = alle_todos
 

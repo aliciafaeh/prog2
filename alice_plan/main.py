@@ -47,7 +47,20 @@ def todosanzeige():
     todo_daten = speichern_todo.load_json()
     return render_template("todosanzeige.html", daten=todo_daten)
 
+
+@app.route("/todoasdone/<todoId>")
+def todoasdone(todoId=None):
+    daten = speichern_todo.load_json()
+
+    todo = daten['todos']['open'][todoId]
+    daten['todos']['done'][todoId] = todo
+    daten['todos']['open'].pop(todoId,None)
+
+    speichern_todo.save_to_json(daten)
+
+    return redirect(url_for('todosanzeige'))
     
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
 

@@ -47,8 +47,8 @@
     </div>
 
 
-
-  {%if daten%}
+<h3 style="margin-top: 40px;">Amount of To Do's: {{ daten['todos']['open']|length }}</h3>
+  {%if daten['todos']['open'].items()%}
     <table class="table">
         <col width="230">
             <tr>
@@ -58,21 +58,41 @@
                 <th>Done?</th>
             </tr>
 
-                {% for todo in daten['todos'].values()%}
+                {% for key, todo in daten['todos']['open'].items() %}
                 <tr>
                   <td>{{todo['was_machen']}}</td>  
                   <td>{{todo['wann_deadline']}}</td> 
                   <td>{{todo['zeitlich']}}</td> 
-                  <td><input type="checkbox" name="done" />&nbsp;</td>
+                  <td><a href="{{ url_for('todoasdone', todoId=key) }}" class="btn">Mark as done!</a></td>
                 </tr>
                 {% endfor %}
 
     </table>
     {% else %}
-    <h1>Keine Termine erfasst</h1>
+    <h1>Keine offenen Todos</h1>
     {% endif %}
 
-<h3>Already Done!</h3>
+<h3 style="margin-bottom: 0;">To Do's already done: {{ daten['todos']['done']|length }}</h3>
+{%if daten['todos']['done'].items()%}
+<table class="table">
+        <col width="230">
+            <tr>
+                <th>What to do</th>
+                <th>Deadline</th>
+                <th>Time</th>
+            </tr>
+                {% for key, todo in daten['todos']['done'].items()%}
+                <tr>
+                  <td>{{todo['was_machen']}}</td>  
+                  <td>{{todo['wann_deadline']}}</td> 
+                  <td>{{todo['zeitlich']}}</td>
+                </tr>
+                {% endfor %}
+
+    </table>
+    {% else %}
+    <h1>Keine abgeschlossenen Todos</h1>
+    {% endif %}
 
 <!--wenn Box Checked isch wär nice würs da uneahzeigt-->
 
