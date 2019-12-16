@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 def termin_speichern(category, subject, where, date, time):
     
@@ -13,7 +14,7 @@ def termin_speichern(category, subject, where, date, time):
         "time": time
     }
         
-    alle_termine[category] = termin
+    alle_termine[category][str(datetime.now())] = termin
         
     json_daten["termine"] = alle_termine
 
@@ -36,6 +37,3 @@ def save_to_json(daten):
         json.dump(daten, open_file)
 
 
-
-
-# youtube-Tutorial dazu: https://www.youtube.com/watch?v=drord9gbr3Y
