@@ -14,7 +14,7 @@
     </div>
 
 
-<h3 class="vierzig">Amount of To Do's: <span class="berechnung">{{ daten['todos']['open']|length }} *</span></h3>
+<h2>Amount of To Do's: <span class="berechnung">{{ daten['todos']['open']|length }} *</span></h2>
   {%if daten['todos']['open'].items()%}
     <table class="table">
         <col width="230">
@@ -25,23 +25,23 @@
                 <th>Done?</th>
             </tr>
 
-                {% for key, todo in daten['todos']['open'].items() %}
-                <tr>
-                  <td>{{todo['was_machen']}}</td>  
-                  <td>{{todo['wann_deadline']}}</td> 
-                  <td>{{todo['zeitlich']}}</td> 
-                  <td><a href="{{ url_for('todoasdone', todoId=key) }}" class="btn">Mark as done!</a></td>
-                </tr>
-                {% endfor %}
+            {% for key, todo in daten['todos']['open'].items() %}
+            <tr>
+              <td>{{todo['was_machen']}}</td>  
+              <td>{{todo['wann_deadline']}}</td> 
+              <td>{{todo['zeitlich']}}</td> 
+              <td><a href="{{ url_for('todoasdone', todoId=key) }}" class="btn">Mark as done!</a></td>
+            </tr>
+            {% endfor %}
 
     </table>
     {% else %}
-    <h1>Keine offenen Todos</h1>
+    <h1>No open To Do's</h1>
     {% endif %}
 
-<h3 style="margin-bottom: 0;">To Do's already done: <span class="berechnung">{{ daten['todos']['done']|length }} *</span></h3>
+<h2>To Do's already done: <span class="berechnung">{{ daten['todos']['done']|length }} *</span></h2>
 {%if daten['todos']['done'].items()%}
-<table class="table">
+    <table class="table">
         <col width="230">
             <tr>
                 <th>What to do</th>
@@ -58,7 +58,7 @@
 
     </table>
     {% else %}
-    <h1>Keine abgeschlossenen Todos</h1>
+    <h1>No finished To Do's</h1>
     {% endif %}
 
 <h1 class="berechnung">*Dieser Wert ist berechnet! (Crazyyy I know!)</h1>
