@@ -17,7 +17,10 @@ def addanevent():
         date = request.form['date']
         time = request.form['time']
         returned_data = speichern_termine.termin_speichern(category, subject, where, date, time)
+        return redirect(url_for('monatsplananzeige'))
+
     return render_template("eventerfassen.html")
+
 
 
 @app.route("/monatsplananzeige")
@@ -26,7 +29,10 @@ def monatsplananzeige(categoryfilter=None):
     termin_daten = speichern_termine.load_json()
 
     if categoryfilter:
-        return render_template("monatsplan.html", daten=termin_daten['termine'][categoryfilter], categoryfilter=categoryfilter)
+        termine_from_now = speichern_termine.get_events_from_now(termin_daten['termine'][categoryfilter])
+
+        return render_template("monatsplan.html", daten=termine_from_now, categoryfilter=categoryfilter)
+        #return render_template("monatsplan.html", daten=termin_daten['termine'][categoryfilter], categoryfilter=categoryfilter)
     else:
         return render_template("monatsplan.html", daten=termin_daten)
 
@@ -39,6 +45,8 @@ def todoerfassen():
         wann_deadline = request.form['wann_deadline']
         zeitlich = request.form['zeitlich']
         returned_data = speichern_todo.todo_speichern(was_machen, wann_deadline, zeitlich)
+        return redirect(url_for('todosanzeige'))
+
     return render_template("todoerfassen.html")
 
 

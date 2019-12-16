@@ -1,5 +1,6 @@
 import json
-from datetime import datetime
+import datetime
+from datetime import date
 
 def termin_speichern(category, subject, where, date, time):
     
@@ -20,6 +21,20 @@ def termin_speichern(category, subject, where, date, time):
 
     save_to_json(json_daten)
     return json_daten                        #Json-Datei mit neuer Eingabe wird zurückgegeben
+
+def get_events_from_now(termin_daten):
+    now = datetime.datetime.combine(date.today(),datetime.datetime.now().time())
+
+    filtered_events = {}
+    for key, value in termin_daten.items():
+        datetime_string = value['date'] + " " + value['time']
+        event_datetime = datetime.datetime.strptime(datetime_string, '%Y-%m-%d %H:%M')
+
+        if event_datetime >= now:
+            filtered_events[key] = value
+
+    return filtered_events
+
 
 def load_json():
     json_daten = {}

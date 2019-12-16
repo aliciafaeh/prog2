@@ -68,6 +68,7 @@
             </tr>
 
             {% if categoryfilter %}
+            <h3 style="margin-top: 40px;">Upcoming Events</h3>
                   {% for termin in daten.values() %}
                   <tr>
                     <td>{{termin['category']}}</td> 
@@ -78,6 +79,7 @@
                   </tr>
                   {% endfor %}
             {% else %}
+            <h3 style="margin-top: 40px;">All Events</h3>
               {% for category in daten['termine'].values()%}
                   {% for termin in category.values() %}
                   <tr>
