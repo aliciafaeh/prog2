@@ -5,7 +5,7 @@
 
 
 <h1>ADD AN EVENT</h1>
-
+<!--Navigation, für einen guten Überblick der Webseite. url_for verweist auf die jeweiligen "App Router" über das main.py + Active-Class damit man weiss wo man sich befindet-->
     <div class="links">
         <a href="{{ url_for('startseite') }}">Homepage</a>
         <a href="{{ url_for('addanevent') }}" class="active">Add an Event</a>
@@ -16,7 +16,8 @@
             <br>
 <h2>A lot of places to be at and so little time</h2>
 
-<!--Abschnitt für einen neuen "Event" hinzuzufügen-->
+<!--Abschnitt für einen neuen "Event" hinzuzufügen: mit der method "POST" im Formularelement wird der Befehl dem Browser gegeben, dass der Webserver die Daten zur Verarbeitung erhält. Im main.py wird in der def addanevent gesagt was mit den Daten gemacht wird. Die Daten werden "requested" also beantrag und dann wird die returned data im speichern_termine.py weiterverarbeitet.
+-->
 <div>
     <form class="new_entry" method="POST">
         <div>

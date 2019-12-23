@@ -18,7 +18,6 @@ def addanevent():
         time = request.form['time']
         returned_data = speichern_termine.termin_speichern(category, subject, where, date, time)
         return redirect(url_for('monatsplananzeige'))
-
     return render_template("eventerfassen.html")
 
 
