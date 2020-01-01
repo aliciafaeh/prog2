@@ -11,5 +11,5 @@ Probleme:
 
 1. Bei öffnen auf dem Localhost kann es vorkommen, dass das CSS nicht richtig einbezogen wird. In diesem Fall kann mit Strg + Shift + R die Seite neu geladen werden. Der zwischengespeicherte Inhalt wird dabei ignoriert.
 
-2.
+2. Applikation hat Probleme mit Umlauten, keine Ahnung weshalb, wird noch im Hinterkopf gehalten um Lösung für Problem zu finden
 
