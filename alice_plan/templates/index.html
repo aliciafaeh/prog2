@@ -1,20 +1,24 @@
-{% include "html_head.html" %}
+<!--Mit dem include wird hier mein header hinzugefügt, 
+so muss ich immer nur einmal Änderungen vornehmen und 
+nicht in allen htmls-->
 
+{% include "html_head.html" %}
 <body>
 
+<!--Der Titel der Seite-->
 <h1> THE LIFE OF ALICIA</h1>
 
+<!--Untertitel-->
 <h2>Do you want to add an event or a to do?</h2>
 
-<!--Auswahl, ob man einen Event also sprich Termin oder ein To Do möchte hinzufügen-->
+<!--Auswahl, ob man einen Event also sprich Termin oder ein To Do hinzufügen möchte-->
     <div class="navbar">
-        <a href="{{ url_for('addanevent') }}">Event</a>
+    	<!--Mit url_for wird vom main.py sozusagen die Definition also Link bezogen-->
+        <a href="{{ url_for('addanevent') }}">Event</a>   
         	<br><br><br><br><br>
         <a href="{{ url_for('todoerfassen') }}">To Do</a>
     </div>
 
-
 </body>
-
 </html>
 

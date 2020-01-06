@@ -20,8 +20,6 @@ def addanevent():
         return redirect(url_for('monatsplananzeige'))
     return render_template("eventerfassen.html")
 
-
-
 @app.route("/monatsplananzeige")
 @app.route("/monatsplananzeige/<categoryfilter>")
 def monatsplananzeige(categoryfilter=None):

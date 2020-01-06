@@ -3,6 +3,7 @@
 
 <body>
 
+<!--Titel der Seite-->
 <h1>ADDED EVENTS</h1>
 
 <!--Navigation, für einen guten Überblick der Webseite. url_for verweist auf die jeweiligen "App Router" über das main.py + Active-Class damit man weiss wo man sich befindet-->
@@ -13,6 +14,7 @@
     <a href="{{ url_for('todoerfassen') }}">Add a To Do</a>
     <a href="{{ url_for('todosanzeige') }}">Added To Do's</a>
 </div>
+
 <!--Filter-Funktion eingebaut, hier kann man nach Kategorie die verschiedenen Termine anzeigen lassen. -->
 <div id="myBtnContainer" style="margin-top: 60px;">
     <a href="{{ url_for('monatsplananzeige') }}" class="btn {% if not categoryfilter %} active {% endif %}"> Show all</a>
