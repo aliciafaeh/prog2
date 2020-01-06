@@ -14,4 +14,6 @@ Mit meiner Web Applikation kann ich Termine und To Do's erfassen. Events kann ic
 
 2. Applikation hat Probleme mit Umlauten, keine Ahnung weshalb, wird noch im Hinterkopf gehalten, um Lösung für Problem zu finden.
 
+## Workflow:
+Erster Entwurf, wird sich aber beim Programmieren sicherlich noch ändern..
 ![alt text](workflow.PNG)
