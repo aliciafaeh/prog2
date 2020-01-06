@@ -1,6 +1,6 @@
-#Projektidee Alicia Fäh
+# Projektidee Alicia Fäh
 
---> Auflistung aller Events und To Do's aus meinem Leben 
+Auflistung aller Events und To Do's aus meinem Leben 
 
 Ausgangslage:
 Was ich bei meinem Kalender auf dem Handy manchmal vermisse ist eine Auflistung aller Termine auf einen Blick, sowie das seperate erfassen von To Do's. Die Erinnerungen App finde ich suboptimal. 
