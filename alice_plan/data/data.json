@@ -15,12 +15,12 @@
         "date": "2020-02-03",
         "time": "06:00"
       },
-      "2020-01-06 20:14:18.931969": {
+      "2020-01-07 10:23:13.501904": {
         "category": "Work",
-        "subjects": "df",
-        "where": "df",
-        "date": "2020-08-08",
-        "time": "03:03"
+        "subjects": "ää",
+        "where": "Zürich",
+        "date": "2020-12-12",
+        "time": "01:01"
       }
     },
     "Lectures": {
@@ -61,7 +61,7 @@
       },
       "2020-01-01 22:22:43.333541": {
         "category": "Lectures",
-        "subjects": "MarkenfÃƒÆ’Ã‚Â¼hrung",
+        "subjects": "Markenfuehrung",
         "where": "Chur",
         "date": "2020-02-13",
         "time": "08:15"
