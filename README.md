@@ -16,4 +16,7 @@ Mit meiner Web Applikation kann ich Termine und To Do's erfassen. Events kann ic
 
 ## Workflow:
 Erster Entwurf, wird sich aber beim Programmieren sicherlich noch ändern..
-![alt text](workflow.PNG)
+![Workflow Picture!](workflow.PNG)
+
+## Walkthrough:
+
