@@ -67,3 +67,5 @@ def save_to_json(daten):
     """
     with open('data/data.json', "w", encoding="utf-8") as open_file:
         json.dump(daten, open_file)
+
+      

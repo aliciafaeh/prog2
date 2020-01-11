@@ -1,19 +1,19 @@
 import json
 
 def todo_speichern(was_machen, wann_deadline, zeitlich):
-"""
-Summary:
-    Hier wird angegeben wie, dass die eingegeben To Do's in die json-File gespeicherten werden.
+    """
+    Summary:
+        Hier wird angegeben wie, dass die eingegeben To Do's in die json-File gespeicherten werden.
 
-Argumente:
-    was_machen(string): Was muss gemacht werden
-    wann_deadline(date): Bis zu welchem Datum muss es erledigt werden
-    zeitlich(time): Bis zu welcher Uhrzeit soll es erledigt werden?
+    Argumente:
+        was_machen(string): Was muss gemacht werden
+        wann_deadline(date): Bis zu welchem Datum muss es erledigt werden
+        zeitlich(time): Bis zu welcher Uhrzeit soll es erledigt werden?
 
-Returns:
-    Dictionary: Alle To Do-Daten werden aus json-File wiedergegeben.
+    Returns:
+        Dictionary: Alle To Do-Daten werden aus json-File wiedergegeben.
 
-"""
+    """
     json_daten = data.load_json()
     alle_todos = json_daten.get("todos", {})
         
