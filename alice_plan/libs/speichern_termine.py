@@ -1,10 +1,11 @@
 import json
 from datetime import date
 import datetime
+from libs import data
 
 def termin_speichern(category, subject, where, date, time):
     
-    json_daten = load_json()
+    json_daten = data.load_json()
     alle_termine = json_daten.get("termine", {})
         
     termin = {
@@ -19,7 +20,7 @@ def termin_speichern(category, subject, where, date, time):
         
     json_daten["termine"] = alle_termine
 
-    save_to_json(json_daten)
+    data.save_to_json(json_daten)
     return json_daten                        #Json-Datei mit neuer Eingabe wird zurückgegeben
 
 def get_events_from_now(termin_daten):
@@ -34,21 +35,4 @@ def get_events_from_now(termin_daten):
             filtered_events[key] = value
 
     return filtered_events
-
-
-def load_json():
-    json_daten = {}
-    try:
-        with open('data/data.json') as open_file:    #Json-Datei öffnen/lesen
-            json_daten = json.load(open_file)
-    
-    except FileNotFoundError:                       #wenn json.datei noch leer ist     
-        print("File not found")
-
-    return json_daten
-
-def save_to_json(daten):
-    with open('data/data.json', "w", encoding="utf-8") as open_file:
-        json.dump(daten, open_file)
-
 

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, url_for
-from libs import speichern_termine, speichern_todo
+from libs import speichern_termine, speichern_todo, data
 
 app = Flask(__name__)
 
@@ -23,11 +23,11 @@ def addanevent():
 @app.route("/monatsplananzeige")
 @app.route("/monatsplananzeige/<categoryfilter>")
 def monatsplananzeige(categoryfilter=None):
-    termin_daten = speichern_termine.load_json()
+    termin_daten = data.load_json()
 
     if categoryfilter:
         termine_from_now = speichern_termine.get_events_from_now(termin_daten['termine'][categoryfilter])
-
+        
         return render_template("monatsplan.html", daten=termine_from_now, categoryfilter=categoryfilter)
         #return render_template("monatsplan.html", daten=termin_daten['termine'][categoryfilter], categoryfilter=categoryfilter)
     else:
@@ -49,19 +49,19 @@ def todoerfassen():
 
 @app.route("/todosanzeige")
 def todosanzeige():
-    todo_daten = speichern_todo.load_json()
+    todo_daten = data.load_json()
     return render_template("todosanzeige.html", daten=todo_daten)
 
 
 @app.route("/todoasdone/<todoId>")
 def todoasdone(todoId=None):
-    daten = speichern_todo.load_json()
+    daten = data.load_json()
 
     todo = daten['todos']['open'][todoId]
     daten['todos']['done'][todoId] = todo
     daten['todos']['open'].pop(todoId,None)
 
-    speichern_todo.save_to_json(daten)
+    data.save_to_json(daten)
 
     return redirect(url_for('todosanzeige'))
     

@@ -38,7 +38,8 @@ Wenn categoryfilter gesetzt wird, erhält der entsprechende Button die class act
             <th>When</th>
             <th>Time</th>
         </tr>
-
+<!--(2) Falls ein categoryfilter gesetzt wird, werden alle Termine der entsprechenden Kategorie angezeigt.
+Das Template erhält nur die Daten der entsprechenden Kategorie vom Backend -->
   {% if categoryfilter %}
     <h3 class="vierzig">Upcoming Events</h3>
       {% for termin in daten.values() %}
@@ -50,33 +51,38 @@ Wenn categoryfilter gesetzt wird, erhält der entsprechende Button die class act
             <td>{{termin['time']}}</td> 
         </tr>
       {% endfor %}
+<!--(3) Es wurde keine categoryfilter gesetzt, so werden alle Termine aller Kategorien angezeigt.-->
   {% else %}
     <h3 class="vierzig">All Events</h3>
       {% for category in daten['termine'].values()%}
-      {% for termin in category.values() %}
-        <tr>
-            <td>
-              <span class="
-              {% if termin['category']=='Work' %} work
-              {% elif termin['category']=='Lectures' %} lectures
-              {% elif termin['category']=='LeisureTime' %} leisuretime
-              {% elif termin['category']=='StudyTime' %} studytime
-              {% elif termin['category']=='Exams' %} exams
-              {% endif %}">{{termin['category']}}</span>
-            </td> 
-            <td>{{termin['subjects']}}</td>  
-            <td>{{termin['where']}}</td> 
-            <td>{{termin['date']}}</td>  
-            <td>{{termin['time']}}</td>
-        </tr>
-      {% endfor %}
+        {% for termin in category.values() %}
+          <tr>
+              <td>
+                <span class="
+                {% if termin['category']=='Work' %} work
+                {% elif termin['category']=='Lectures' %} lectures
+                {% elif termin['category']=='LeisureTime' %} leisuretime
+                {% elif termin['category']=='StudyTime' %} studytime
+                {% elif termin['category']=='Exams' %} exams
+                {% endif %}">{{termin['category']}}</span>
+              </td> 
+              <td>{{termin['subjects']}}</td>  
+              <td>{{termin['where']}}</td> 
+              <td>{{termin['date']}}</td>  
+              <td>{{termin['time']}}</td>
+          </tr>
+        {% endfor %}
       {% endfor %}
   {% endif %}
 </table>
 
-<!--(1) Falls keine Daten vorhanden sind, wird folgendes ausgegeben:-->
+<!--(2) Falls unter dem entsprechenden categoryfilter kein Termin erfasst wurde, wird folgendes ausgegeben:-->
+{% elif categoryfilter %}
+<h1 class="vierzig">No upcoming events</h1>
+
+<!--(1) Falls gar keine Daten vorhanden sind, wird folgendes ausgegeben:-->
 {% else %}
-<h1 class="vierzig">Keine Termine erfasst</h1>
+<h1 class="vierzig">No added events</h1>
 {% endif %}
 
 
