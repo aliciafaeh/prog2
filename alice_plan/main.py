@@ -31,7 +31,7 @@ def addanevent():
 
     Returns:
         template: Das HTML 'eventerfassen' wird gerendert, wo Form ausgefüllt werden kann.
-        redirect: sobald auf 'add' geklickt wird, wird auf den Router 'monatsplananzeige' verlinkt.
+        redirect: sobald auf 'add' geklickt wird, wird auf den Router 'monatsplananzeige' weitergeleitet.
     """
     if request.method == 'POST':
         print(request.form)
@@ -79,7 +79,7 @@ def todoerfassen():
 
     Returns:
         template: Das HTML 'todoerfassen' wird gerendert, wo Form ausgefüllt werden kann.
-        redirect: sobald auf 'add' geklickt wird, wird auf den Router 'todosanzeige' verlinkt.
+        redirect: sobald auf 'add' geklickt wird, wird auf den Router 'todosanzeige' weitergeleitet.
     """
     if request.method == 'POST':
         print(request.form)
@@ -96,17 +96,11 @@ def todoerfassen():
 def todosanzeige():
     """
     Summary:
-        Hier werden alle Events angezeigt.
-        Die url/route ist '/monatsplananzeige' oder wenn categoryfilter gesetzt: '/monatsplananzeige/<categoryfilter>'.
+        Hier werden alle To Do's angezeigt.
+        Die url/route ist '/todosanzeige'.
     
-    Argumente:
-        categoryfilter: wenn vorhanden, wird er mitgegeben, sonst nicht. --> für filtern von Events.
-
     Returns:
-        if:
-            template: Das HTML 'monatsplan' wird mit dem categoryfilter gerendert. Es werden nur Termine der Zukunft angezeigt
-        else:
-            template: Das HTML 'monatsplan' wird ohne categoryfilter gerendert. Es werden alle erfassten Termine angezeigt
+        template: Das HTML 'todosanzeige.html' wird gerendert.
     """
     todo_daten = data.load_json()
     return render_template("todosanzeige.html", daten=todo_daten)
@@ -114,6 +108,16 @@ def todosanzeige():
 
 @app.route("/todoasdone/<todoId>")
 def todoasdone(todoId=None):
+    """
+    Summary:
+        Hier wird ein To do als done gekennzeichnet,
+        beziehungsweise in das dictionary 'done' kopiert 
+        und aus dem dictionar 'open' rausgelöscht
+    Argumente:
+        todoId: Key des To Do's welches als Done markiert werden soll.
+    Returns:
+        redirect: es wird auf die 'todosanzeige' weitergeleitet.
+    """
     daten = data.load_json()
 
     todo = daten['todos']['open'][todoId]
