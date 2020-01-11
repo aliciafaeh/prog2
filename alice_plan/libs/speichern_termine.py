@@ -9,7 +9,18 @@ import datetime
 from libs import data
 
 def termin_speichern(category, subject, where, date, time):
-    
+    """Summary
+    Gibt an, wie die eingegebenen Daten in das json-File gespeichert wird.
+    Argumente:
+        category(string): Terminkategorie
+        subject(string): Was für ein Termin ist es, Beschreibung
+        where(string): Wo wird Termin stattfinden
+        date(date): An welchem Datum Termin stattfinden wird
+        time(time): Um welche Uhrzeit Termin beginnt
+
+    Returns:
+        Dictionary: Alle Termindaten werden aus json-File wiedergegeben.
+    """
     json_daten = data.load_json()
     alle_termine = json_daten.get("termine", {})
         
@@ -26,9 +37,20 @@ def termin_speichern(category, subject, where, date, time):
     json_daten["termine"] = alle_termine
 
     data.save_to_json(json_daten)
-    return json_daten                        #Json-Datei mit neuer Eingabe wird zurückgegeben
+    return json_daten                        
 
 def get_events_from_now(termin_daten):
+    """Summary
+    Bei den gefilterten Terminen nach Kategorie werden jeweils nur Termine wiedergegeben
+    die in der Zukunft liegen.
+
+    Argumente:
+        termin_daten(dict): Alle Termine
+
+    Returns:
+        Alle gefilterten Termine, also sobald event_datetime grösser ist,
+        wie das Datum von Heute, werden diese ausgegeben.
+    """
     now = datetime.datetime.combine(date.today(),datetime.datetime.now().time())
 
     filtered_events = {}
