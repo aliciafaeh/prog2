@@ -13,8 +13,9 @@
         <a href="{{ url_for('todosanzeige') }}" class="active">Added To Do's</a>
     </div>
 
-
+<!-- Mit length wird berechnet wie viele offene To Do's es nocht gibt -->
 <h2>Amount of To Do's: <span class="berechnung">{{ daten['todos']['open']|length }} *</span></h2>
+<!-- (1) Falls es items bei den offenen To Do's gibt wird folgendes ausgegeben: -->
   {%if daten['todos']['open'].items()%}
     <table class="table">
         <col width="230">
@@ -24,22 +25,26 @@
                 <th>Time</th>
                 <th>Done?</th>
             </tr>
-
+            <!-- alle offenen To Do's durchiterieren & als Tabellenreihe anzeigen -->
             {% for key, todo in daten['todos']['open'].items() %}
             <tr>
               <td>{{todo['was_machen']}}</td>  
               <td>{{todo['wann_deadline']}}</td> 
               <td>{{todo['zeitlich']}}</td> 
+              <!--wird auf main.py verlinkt, Funktion todoasdone-->
               <td><a href="{{ url_for('todoasdone', todoId=key) }}" class="btn">Mark as done!</a></td>
             </tr>
             {% endfor %}
 
     </table>
+<!-- (1) Wenn keine offenen To Do's vorhanden sind: -->
     {% else %}
     <h1>No open To Do's</h1>
     {% endif %}
 
+<!-- Mit length wird berechnet wie viele erledigte To Do's es hat -->
 <h2>To Do's already done: <span class="berechnung">{{ daten['todos']['done']|length }} *</span></h2>
+<!-- (2) Falls es items bei den erledigten To Do's gibt wird folgendes ausgegeben: -->
 {%if daten['todos']['done'].items()%}
     <table class="table">
         <col width="230">
@@ -48,15 +53,17 @@
                 <th>Deadline</th>
                 <th>Time</th>
             </tr>
-                {% for key, todo in daten['todos']['done'].items()%}
-                <tr>
-                  <td>{{todo['was_machen']}}</td>  
-                  <td>{{todo['wann_deadline']}}</td> 
-                  <td>{{todo['zeitlich']}}</td>
-                </tr>
-                {% endfor %}
+            <!-- alle erledigten To Do's durchiterieren & als Tabellenreihe anzeigen -->
+            {% for key, todo in daten['todos']['done'].items()%}
+            <tr>
+              <td>{{todo['was_machen']}}</td>  
+              <td>{{todo['wann_deadline']}}</td> 
+              <td>{{todo['zeitlich']}}</td>
+            </tr>
+            {% endfor %}
 
     </table>
+<!-- (2) Wenn keine erledigten To Do's vorhanden sind: -->
     {% else %}
     <h1>No finished To Do's</h1>
     {% endif %}
