@@ -1,3 +1,8 @@
+"""
+Summary:
+speichern_termine.py ist für das Erfassen und Ausgeben von Events zuständig
+"""
+
 import json
 from datetime import date
 import datetime
