@@ -13,7 +13,7 @@ def load_json():
     Argumente:
         data/data.json --> Ist der Path zur File
 
-    Returns:
+     Returns:
         Dictionary mit den Daten von "termine" und "todos" wird zurückgegeben. 
         Wenn File noch leer oder nicht vorhanden ist, wird sozusagen leere json-file wiedergegeben.
     """
@@ -58,12 +58,12 @@ def load_json():
     return json_daten
 
 def save_to_json(daten):
-	"""
-	Summary
+    """
+    Summary
 
-	Argumente:
-		data/data-json ist der Path zur json-File
-		daten (dict): Dictionary von Terminen und Todos
-	"""
+    Argumente:
+        data/data-json ist der Path zur json-File
+        daten (dict): Dictionary von Terminen und Todos
+    """
     with open('data/data.json', "w", encoding="utf-8") as open_file:
         json.dump(daten, open_file)

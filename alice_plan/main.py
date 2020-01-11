@@ -1,3 +1,7 @@
+"""Summary
+
+
+"""
 from flask import Flask, render_template, redirect, request, url_for
 from libs import speichern_termine, speichern_todo, data
 
@@ -27,7 +31,6 @@ def monatsplananzeige(categoryfilter=None):
 
     if categoryfilter:
         termine_from_now = speichern_termine.get_events_from_now(termin_daten['termine'][categoryfilter])
-        
         return render_template("monatsplan.html", daten=termine_from_now, categoryfilter=categoryfilter)
         #return render_template("monatsplan.html", daten=termin_daten['termine'][categoryfilter], categoryfilter=categoryfilter)
     else:
