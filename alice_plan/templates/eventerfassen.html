@@ -5,9 +5,7 @@
 <!--Titel der Seite. Termin kann hinzugefügt werden-->
 <h1>ADD AN EVENT</h1>
 
-<!--Navigation, für einen guten Überblick der Webseite. 
-url_for verweist auf die jeweiligen "App Router" über 
-das main.py + Active-Class damit man weiss wo man sich befindet-->
+<!--Navigation, für einen guten Überblick der Webseite. Mit url_for wird auf die entsprechende Route / Definition im main.py verlinkt + Active-Class damit man weiss wo man sich befindet-->
     <div class="links">
         <a href="{{ url_for('startseite') }}">Homepage</a>
         <a href="{{ url_for('addanevent') }}" class="active">Add an Event</a>
