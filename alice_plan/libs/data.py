@@ -59,7 +59,7 @@ def save_to_json(daten):
 
 	Argumente:
 		data/data-json ist der Path zur json-File
-		daten (TYPE): Beschreibung
+		daten (dict): Dictionary von Terminen und Todos
 	"""
     with open('data/data.json', "w", encoding="utf-8") as open_file:
         json.dump(daten, open_file)
