@@ -88,7 +88,6 @@ def todoerfassen():
         zeitlich = request.form['zeitlich']
         returned_data = speichern_todo.todo_speichern(was_machen, wann_deadline, zeitlich)
         return redirect(url_for('todosanzeige'))
-
     return render_template("todoerfassen.html")
 
 
