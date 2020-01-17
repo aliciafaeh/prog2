@@ -17,6 +17,30 @@ Mit meiner Web Applikation kann ich Termine und To Do's erfassen. Events kann ic
 3. Zwar kein Problem, aber in einem nächsten Schritt ermöglichen, dass die Events und To Do's noch bearbeitet werden können.
 Und das sobald ein To Do als "Mark as Done" markiert wird wieder als "Undone" angewählt werden kann.
 
+##Leeres Json
+Falls ein leeres Json-file gewünscht ist, muss folgender Inhalt kopiert und eingefügt werden:
+
+{
+  "termine": {
+    "Work": {
+    },
+    "Lectures": {
+    },
+    "LeisureTime": {
+    },
+    "StudyTime": {
+    },
+    "Exams": {
+    }
+  },
+  "todos": {
+    "open": {
+    },
+    "done": {
+    }
+  }
+}
+
 ## Workflow:
 Erster Entwurf, wird sich aber beim Programmieren sicherlich noch ändern..
 ![Workflow Picture!](workflow.PNG)
