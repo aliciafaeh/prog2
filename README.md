@@ -17,8 +17,8 @@ Mit meiner Web Applikation kann ich Termine und To Do's erfassen. Events kann ic
 3. Zwar kein Problem, aber in einem nächsten Schritt ermöglichen, dass die Events und To Do's noch bearbeitet werden können.
 Und das sobald ein To Do als "Mark as Done" markiert wird wieder als "Undone" angewählt werden kann.
 
-##Leeres Json
-Falls ein leeres Json-file gewünscht ist, muss folgender Inhalt kopiert und eingefügt werden:
+## Leeres Json:
+1. Falls ein leeres Json-file gewünscht ist, muss folgender Inhalt kopiert und eingefügt werden:
 
 {
   "termine": {
